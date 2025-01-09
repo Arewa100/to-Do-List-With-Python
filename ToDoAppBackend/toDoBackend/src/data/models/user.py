@@ -1,8 +1,7 @@
-from dataclasses import dataclass
+from pydantic import BaseModel
 
-@dataclass
-class User:
+class User(BaseModel):
     username: str
     email: str
-    password = str
-    id: str
+    password:str
+    id: str = None

@@ -16,5 +16,11 @@ class TaskRepository(ABC):
         pass
 
     @abstractmethod
-    def find_all(self):
+    def find_all(self, user_id):
+        pass
+    @abstractmethod
+    def count(self):
+        pass
+    @abstractmethod
+    def delete_all(self):
         pass

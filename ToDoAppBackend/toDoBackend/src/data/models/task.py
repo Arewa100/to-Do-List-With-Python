@@ -1,9 +1,9 @@
-from dataclasses import dataclass
+from bson import ObjectId
+from pydantic import BaseModel
 
-@dataclass
-class Task:
+class Task(BaseModel):
     title: str
     description: str
     task_status: bool
     user_id: str
-    task_id:str
+    task_id:str = None

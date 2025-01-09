@@ -13,7 +13,14 @@ class UserRepositoryInterface(ABC):
     def delete_by_id(self, user_id):
         pass
     @abstractmethod
-    def find_all(self):
+    def find_all(self, user_id):
+        pass
+    @abstractmethod
+    def count(self):
+        pass
+
+    @abstractmethod
+    def delete_all(self):
         pass
 
 
