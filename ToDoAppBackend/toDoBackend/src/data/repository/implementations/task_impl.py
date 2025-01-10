@@ -33,3 +33,11 @@ class TaskImpl(TaskRepository):
 
     def delete_all(self):
         self.collection_of_task.drop()
+
+    def find_by_title(self, title):
+        found_task = self.task_repository.task.find({"title": title}) # a cursor obj is returned by mongo
+        for task in found_task:
+            return task
+
+    def delete_by_title(self, title):
+        self.task_repository.task.delete_one({"title": title})

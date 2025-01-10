@@ -24,3 +24,10 @@ class TaskRepository(ABC):
     @abstractmethod
     def delete_all(self):
         pass
+    @abstractmethod
+    def find_by_title(self, title):
+        pass
+
+    @abstractmethod
+    def delete_by_title(self, title):
+        pass

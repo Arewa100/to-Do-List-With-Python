@@ -35,7 +35,14 @@ class TestTaskImpl(TestCase):
         self.task_repository.save(task)
         task_two: Task = Task(title="secondPlay", description="it is coming", task_status=False, user_id="Miracle")
         self.task_repository.save(task_two)
-        print(str(self.task_repository.find_all(user_id="Miracle")))
+        print((self.task_repository.find_all(user_id="Miracle")))
+
+    def test_to_save_task_and_find_by_title(self):
+        self.task_repository.delete_all()
+        task: Task = Task(title="play", description="it is coming", task_status=False, user_id="Ope")
+        self.task_repository.save(task)
+        found_task = self.task_repository.find_by_title("play")
+        self.assertEqual(found_task["title"], task.title)
 
 
 

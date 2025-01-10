@@ -13,7 +13,6 @@ class UserRepositoryImpl(UserRepositoryInterface):
     def save(self, user: User):
         user.id = user.username
         self.user_repository.user.insert_one(user.model_dump())
-        print(user.id)
 
 
     def find_by_id(self, user_id):

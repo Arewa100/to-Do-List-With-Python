@@ -10,11 +10,19 @@ class TaskService(ABC):
         pass
 
     @abstractmethod
-    def find_task(self, task_id):
+    def find_task_by_id(self, task_id, user_id):
         pass
 
     @abstractmethod
-    def delete_task(self, task_id):
+    def find_task_by_title(self, title, user_id):
+        pass
+
+    @abstractmethod
+    def delete_task_by_id(self, task_id, user_id):
+        pass
+
+    @abstractmethod
+    def delete_task_by_title(self, title, user_id):
         pass
 
     @abstractmethod
